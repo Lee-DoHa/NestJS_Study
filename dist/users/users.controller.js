@@ -11,11 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersController = void 0;
 const common_1 = require("@nestjs/common");
 const create_user_dto_1 = require("./dto/create-user.dto");
+const verify_email_dto_1 = require("./dto/verify-email.dto");
+const user_login_dto_1 = require("./dto/user-login.dto");
 let UsersController = class UsersController {
     async createUser(dto) {
         console.log(dto);
@@ -44,14 +45,14 @@ __decorate([
     (0, common_1.Post)('/email-verify'),
     __param(0, (0, common_1.Query)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [typeof (_a = typeof VerifyEmailDto !== "undefined" && VerifyEmailDto) === "function" ? _a : Object]),
+    __metadata("design:paramtypes", [verify_email_dto_1.VerifyEmailDto]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "verifyEmail", null);
 __decorate([
     (0, common_1.Post)('/login'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [typeof (_b = typeof UserLoginDto !== "undefined" && UserLoginDto) === "function" ? _b : Object]),
+    __metadata("design:paramtypes", [user_login_dto_1.UserLoginDto]),
     __metadata("design:returntype", Promise)
 ], UsersController.prototype, "login", null);
 __decorate([
