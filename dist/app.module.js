@@ -12,13 +12,15 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const users_controller_1 = require("./users/users.controller");
 const api_controller_1 = require("./api/api.controller");
+const users_service_1 = require("./users/users.service");
+const email_service_1 = require("./email/email.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [],
         controllers: [api_controller_1.ApiController, app_controller_1.AppController, users_controller_1.UsersController],
-        providers: [app_service_1.AppService],
+        providers: [app_service_1.AppService, users_service_1.UsersService, email_service_1.EmailService],
     })
 ], AppModule);
 exports.AppModule = AppModule;
